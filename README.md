@@ -2,7 +2,7 @@
 
 An enterprise organization requires a comprehensive diagnostic audit of its Human Resource Management System (HRMS) database. Over time, legacy data migrations, system upgrades, and manual entry overrides have introduced data anomalies, broken structural hierarchies, and potential compliance variances.
 As the Data Analyst, this report documents a series of proactive, defensive data validation scripts designed to audit payroll compliance, uncover structural relational gaps ("ghost" or "orphan" entities), map talent mobility, and engineer reusable validation layers for HR operations.
-
+---
 ##🔍 2. Curated Audit Modules & Documentation
 
 #🛠️ Module 1: Payroll Compliance & Budgetary Controls
@@ -21,7 +21,7 @@ As the Data Analyst, this report documents a series of proactive, defensive data
 * **The Business Problem:** High earners (salaries > $8,000) drive the largest chunk of corporate liability. HR needs a relative weight report showing what precise percentage of a department's overall budget a single elite earner consumes, alongside their distance from the absolute top cap in the firm.
 * **The Technical Solution:**
 * **HR Data Insight:** This query processes a derived table summary first, then joins back to individual entries. It actively flags structural financial risk—such as a single employee consuming an asymmetric share (e.g., >30%) of a department's entire monthly compensation pool.
-
+---
 
 ##🔄 Module 2: Relational Integrity & Talent Mobility
 
@@ -34,7 +34,7 @@ As the Data Analyst, this report documents a series of proactive, defensive data
 * **The Business Problem:** When auditing retention or talent rotation pathways, HR needs to pinpoint internal career shifts. Specifically, we want to isolate and contrast personnel who have actively changed units where their current department explicitly differs from their prior documented assignment.
 * **The Technical Solution:**
 * **HR Data Insight:** This requires aliasing the departments lookup table twice (d_curr and d_prev). It ignores static histories and isolates lateral transfers, providing clear documentation on inter-departmental mobility trends.
-
+---
 
 ##🛡️ Module 3: Data Cleansing, Governance & Core Automation
 
@@ -52,7 +52,7 @@ As the Data Analyst, this report documents a series of proactive, defensive data
 * **The Business Problem:** Non-technical HR managers frequently request targeted employee diagnostics. Allowing raw database scripting risks injections or syntax crashes. Operations requires a simple parameter interface protected by robust back-end conditional error handling.
 * **The Technical Solution:**
 * **HR Data Insight:** This wraps structural database queries inside a secured boundary. By integrating proactive conditional verification (IF NOT EXISTS), it overrides generic, cryptic database engine messages with high-clarity business warnings when a bad parameter is injected.
-
+---
 
 ##🗄️ Module 4: Metadata & Architecture Auditing
 
@@ -60,3 +60,4 @@ As the Data Analyst, this report documents a series of proactive, defensive data
 * **The Business Problem:** As a data analyst, you must verify that business validation rules are structurally enforced at the core engine tier before the data ever reaches a reporting tool. Relying on documentation is unsafe; you need to inspect active logic states dynamically.
 * **The Technical Solution:**
 * **HR Data Insight:** This accesses system catalog metadata. It lists the exact logical formulas safeguarding active constraints (e.g., verifying that data values fall within authorized bounds), guaranteeing absolute defensive alignment across the enterprise application layer.
+---
