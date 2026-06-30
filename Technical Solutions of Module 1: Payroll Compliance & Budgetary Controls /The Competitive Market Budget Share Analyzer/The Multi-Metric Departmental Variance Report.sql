@@ -1,0 +1,16 @@
+
+SELECT 
+    department_id,
+    COUNT(*) AS [Total_Staff],
+    MAX(salary) - MIN(salary) AS [Salary_Gap],
+    COUNT(CASE WHEN salary > 10000 THEN 1 END) AS [High_Earner_Count],
+    CASE 
+        WHEN SUM(salary) > 50000 THEN 'EXPENSIVE'
+        WHEN SUM(salary) BETWEEN 20000 AND 50000 THEN 'AVERAGE'
+        ELSE 'LOW BUDGET'
+    END AS [Budget_Status]
+FROM employees
+WHERE department_id IS NOT NULL
+GROUP BY department_id
+HAVING COUNT(*) > 5
+ORDER BY [Total_Staff] DESC;
