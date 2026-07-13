@@ -1,10 +1,38 @@
-## 🏢 1. Project Overview & Business Scenario
+# End-to-End HR Management System: SQL Data Audit & Power BI Analytics
 
-An enterprise organization requires a comprehensive diagnostic audit of its Human Resource Management System (HRMS) database. Over time, legacy data migrations, system upgrades, and manual entry overrides have introduced data anomalies, broken structural hierarchies, and potential compliance variances.
-As the Data Analyst, this report documents a series of proactive, defensive data validation scripts designed to audit payroll compliance, uncover structural relational gaps ("ghost" or "orphan" entities), map talent mobility, and engineer reusable validation layers for HR operations.
+An enterprise-grade, end-to-end data analytics solution that implements an HR Management System. This project combines robust **SQL Database Design & Defensive Data Auditing** with a high-performance **Power BI Executive Dashboard** to monitor workforce metrics, optimize salary structures, track internal mobility, and proactively enforce data governance.
+
 ---
-## 🔍 2. Curated Audit Modules & Documentation
 
+## 🚀 Key Dashboard Interface
+![HR Management Dashboard](powerbi_dashboard/screenshots/dashboard_dark_theme.png)
+*(A premium dark-themed executive control center built with custom DAX optimization patterns)*
+
+---
+
+## 🛠️ Project Architecture & Workflow
+1. **Data Layer (SQL Server/MySQL):** Implements schemas tracking core employee distributions, regional offices, job levels, and historical structural career logs.
+2. **Data Integrity & Auditing Layer (SQL & DAX):** Leverages proactive data validation to flag system errors, duplicate records, or unmatched structural anomalies.
+3. **Analytics & Visualization Layer (Power BI):** Translates millions of row-level entries into actionable strategic indicators using advanced semantic modeling.
+
+---
+
+## 📊 Core Analytical Features & DAX Implementation
+
+### 1. Corporate Strategy Metrics
+* **Total Headcount & Cost:** Instantly summarizes active workforce volume ($162$) alongside operational salary liabilities ($1.06M$).
+* **Salary Gap Identification:** A dynamic column visual mapping operational pay parity discrepancies sorted by department to prevent corporate friction.
+
+### 2. Talent Mobility Tracking
+* **Lateral History Analysis:** Features a dedicated Donut Chart visual dissecting career transfers vs static tenure tracking out of the historical logs.
+* **Active vs. Total Positions:** Monitors internal structural capacity ($19$ Active vs. $29$ Total Positions) to guide talent acquisition logic.
+
+### 3. Automated Data Governance (Defensive Analytics)
+* **Duplicate Profile Tracker:** A custom health indicator built to alert HR operations if structural redundancies slip past the database layer:
+  ```dax
+  Duplicate_Count = COUNTROWS(employees) - DISTINCTCOUNT(employees[employee_id])
+
+##SQL Data Audit
 ### 🛠️ Module 1: Payroll Compliance & Budgetary Controls
 
 ### A. The Multi-Metric Departmental Variance Report
