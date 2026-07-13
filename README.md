@@ -32,7 +32,7 @@ An enterprise-grade, end-to-end data analytics solution that implements an HR Ma
   ```dax
   Duplicate_Count = COUNTROWS(employees) - DISTINCTCOUNT(employees[employee_id])
 
-##SQL Data Audit
+## SQL Data Audit
 ### 🛠️ Module 1: Payroll Compliance & Budgetary Controls
 
 ### A. The Multi-Metric Departmental Variance Report
