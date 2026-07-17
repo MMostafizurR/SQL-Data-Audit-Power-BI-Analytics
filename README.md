@@ -49,6 +49,7 @@ An enterprise-grade, end-to-end data analytics solution that implements an HR Ma
 * **The Business Problem:** High earners (salaries > $8,000) drive the largest chunk of corporate liability. HR needs a relative weight report showing what precise percentage of a department's overall budget a single elite earner consumes, alongside their distance from the absolute top cap in the firm.
 * **The Technical Solution:**
 * **HR Data Insight:** This query processes a derived table summary first, then joins back to individual entries. It actively flags structural financial risk—such as a single employee consuming an asymmetric share (e.g., >30%) of a department's entire monthly compensation pool.
+  
 ---
 
 ### 🔄 Module 2: Relational Integrity & Talent Mobility
